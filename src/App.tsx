@@ -16,10 +16,10 @@ const houses = [
     price: "Od 550 000 zł",
     area: "110",
     rooms: 3,
-    land: "500",
+    land: "Od 500",
     status: "Dostępny",
     image: "images/1.png",
-    tags: ["Garaż", "Ogród", "Pompa ciepła", "Rekuperacja", "Działka z lasem", "Strumyk"]
+    tags: ["Garaż", "Ogród", "Pompa ciepła", "Rekuperacja", "Działka z lasem", "Strumyk", "Natura"]
   },
 ];
 
