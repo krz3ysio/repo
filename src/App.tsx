@@ -19,7 +19,7 @@ const houses = [
     land: "Od 500",
     status: "Dostępny",
     image: "images/1.png",
-    tags: ["Garaż", "Ogród", "Pompa ciepła", "Rekuperacja", "Działka z lasem", "Strumyk"]
+    tags: ["Garaż", "Ogród", "Pompa ciepła", "Rekuperacja", "Działka z lasem", "Strumyk", "Natura"]
   },
 ];
 
