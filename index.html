@@ -27,6 +27,46 @@ Error generating stack: `+l.message+`
   <body>
     <div id="root"></div>
   </body>
+  <!-- NOWY FORMULARZ KONTAKTOWY -->
+<div id="new-contact-form" style="padding: 50px 0; background: #f9f9f9;">
+  <div style="max-width: 800px; margin: 0 auto; padding: 0 20px;">
+    <h2 style="text-align: center; margin-bottom: 30px;">Napisz do nas</h2>
+    
+    <form action="https://formsubmit.co/dmhouse91@gmail.com" method="POST">
+      <!-- Ukryte pola -->
+      <input type="hidden" name="_subject" value="Nowa wiadomość z domy-natura.pl">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      
+      <!-- Pola formularza -->
+      <div style="margin-bottom: 20px;">
+        <input type="text" name="name" placeholder="Imię i nazwisko" 
+               style="width: 100%; padding: 12px; border: 1px solid #ccc;" required>
+      </div>
+      
+      <div style="margin-bottom: 20px;">
+        <input type="email" name="email" placeholder="Email" 
+               style="width: 100%; padding: 12px; border: 1px solid #ccc;" required>
+      </div>
+      
+      <div style="margin-bottom: 20px;">
+        <input type="tel" name="phone" placeholder="Telefon" 
+               style="width: 100%; padding: 12px; border: 1px solid #ccc;">
+      </div>
+      
+      <div style="margin-bottom: 20px;">
+        <textarea name="message" placeholder="Twoja wiadomość" 
+                  style="width: 100%; padding: 12px; border: 1px solid #ccc; height: 150px;" 
+                  required></textarea>
+      </div>
+      
+      <button type="submit" 
+              style="background: #2ecc71; color: white; border: none; padding: 15px 40px; font-size: 16px; cursor: pointer;">
+        Wyślij wiadomość
+      </button>
+    </form>
+  </div>
+</div>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
