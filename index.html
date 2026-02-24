@@ -27,30 +27,61 @@ Error generating stack: `+l.message+`
   <body>
     <div id="root"></div>
   </body>
-  <!-- Dodaj skrypt EmailJS -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
-<script>
-  // Inicjalizuj EmailJS ze swoim Public Key
-  emailjs.init('JoXayAp4Bb_m-zfK_');
-  
-  // Obsługa formularza po załadowaniu strony
-  document.addEventListener('DOMContentLoaded', function() {
-    const contactForm = document.getElementById('contact-form'); // lub znajdź inaczej
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <!-- ... pozostałe head ... -->
+    <!-- Dodaj bibliotekę EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+    <!-- ... reszta strony ... -->
     
-    if (contactForm) {
-      contactForm.addEventListener('submit', function(event) {
-        event.preventDefault();
+    <section class="contact" id="contact">
+        <h2>Skontaktuj się z nami</h2>
         
-        emailjs.sendForm('service_o2ogb3k', 'template_cmc5mrd', this)
-          .then(function() {
-            alert('Wiadomość została wysłana!');
-            contactForm.reset();
-          }, function(error) {
-            alert('Wystąpił błąd: ' + JSON.stringify(error));
-          });
-      });
-    }
-  });
-</script>
+        <form id="contact-form">
+            <input type="text" id="name" name="name" placeholder="Imię i nazwisko" required>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <input type="tel" id="phone" name="phone" placeholder="Telefon">
+            <textarea id="message" name="message" placeholder="Wiadomość" required></textarea>
+            <button type="submit">Wyślij wiadomość</button>
+        </form>
+    </section>
+
+    <script type="text/javascript">
+        // Inicjalizuj EmailJS (TEN PUBLIC KEY JEST OK)
+        emailjs.init('JoXayAp4Bb_m-zfK_');
+        
+        // Obsługa formularza
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Pobierz dane z formularza
+            const formData = {
+                to_name: "Admin Domy Natura",
+                from_name: document.getElementById('name').value,
+                reply_to: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                message: document.getElementById('message').value
+            };
+            
+            // WYSYŁANIE EMAILA
+            // WAŻNE: Musisz utworzyć Service i Template w EmailJS i wstawić poniżej swoje ID
+            emailjs.send(
+                'service_o2ogb3k',     // ← ZASTĄP Service ID z panelu EmailJS
+                'template_cmc5mrd',    // ← ZASTĄP Template ID z panelu EmailJS
+                formData
+            )
+            .then(function(response) {
+                console.log('SUCCESS!', response.status, response.text);
+                alert('✅ Wiadomość została wysłana! Dziękujemy za kontakt.');
+                document.getElementById('contact-form').reset();
+            }, function(error) {
+                console.log('FAILED...', error);
+                alert('❌ Wystąpił błąd. Spróbuj ponownie lub zadzwoń: +48 123 456 789');
+            });
+        });
+    </script>
+</body>
 </html>
