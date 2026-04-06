@@ -3,18 +3,25 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Polityka Prywatności</title>
-    
+    <title>Polityka Prywatności | Domy Natura</title>
+    <meta name="robots" content="index,follow" />
+    <meta name="description" content="Polityka Prywatności serwisu Domy Natura – zasady przetwarzania danych osobowych." />
+
     <style>
+      /* --- TWOJE ORYGINALNE ZMIENNE I STYL --- */
       :root {
         --bg1: #0b1220;
         --bg2: #111827;
         --amber: #f59e0b;
         --orange: #f97316;
         --text: #ffffff;
-        --muted: rgba(255, 255, 255, 0.82); /* Lekko jaśniejszy dla czytelności */
+        --muted: rgba(255, 255, 255, 0.78);
         --card: rgba(255, 255, 255, 0.06);
         --border: rgba(255, 255, 255, 0.14);
+      }
+
+      html {
+        scroll-behavior: smooth;
       }
 
       body {
@@ -26,17 +33,28 @@
           radial-gradient(1200px 600px at 20% 10%, rgba(245, 158, 11, 0.18), transparent 55%),
           radial-gradient(1000px 600px at 80% 90%, rgba(249, 115, 22, 0.14), transparent 55%),
           linear-gradient(135deg, var(--bg1), var(--bg2));
-        padding: 40px 20px;
+        display: grid;
+        place-items: start center; /* Zmienione na start, aby długie treści nie były wyśrodkowane w pionie */
+        padding: 40px 28px;
       }
 
-      /* Kontener na całą treść */
-      .policy-wrapper {
-        width: min(900px, 100%); /* Węższy niż landing page, żeby tekst się dobrze czytał */
-        margin: 0 auto;
+      .wrap {
+        width: min(1200px, 100%);
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 24px;
+        align-items: start; /* Ważne dla długich treści */
+        padding-bottom: 40px;
       }
 
-      /* Główna karta */
-      .policy-card {
+      @media (max-width: 900px) {
+        .wrap {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* --- KARTA GŁÓWNA (DOKUMENT) --- */
+      .card {
         background: var(--card);
         border: 1px solid var(--border);
         border-radius: 28px;
@@ -45,157 +63,288 @@
         backdrop-filter: blur(10px);
       }
 
-      /* Tytuł z gradientem */
-      .policy-title {
-        font-size: clamp(36px, 5vw, 52px);
+      /* Badge */
+      .badge {
+        display: inline-block;
+        padding: 8px 14px;
+        border-radius: 999px;
+        border: 1px solid rgba(245, 158, 11, 0.35);
+        background: linear-gradient(90deg, rgba(245, 158, 11, 0.18), rgba(249, 115, 22, 0.14));
+        color: #ffd38a;
+        font-weight: 600;
+        font-size: 13px;
+        letter-spacing: 0.2px;
+        margin-bottom: 16px;
+        text-transform: uppercase;
+      }
+
+      /* Typografia dokumentu */
+      h1 {
+        margin: 0 0 12px;
+        font-size: clamp(32px, 4vw, 48px);
         line-height: 1.1;
         font-weight: 900;
-        margin: 0 0 10px;
-        background: linear-gradient(90deg, var(--amber), var(--orange));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        text-shadow: 0 0 30px rgba(245, 158, 11, 0.2);
+        letter-spacing: -0.02em;
       }
 
-      .policy-date {
-        display: inline-block;
-        color: var(--amber);
-        font-size: 14px;
-        font-weight: 600;
-        margin-bottom: 30px;
-        padding: 6px 12px;
-        border: 1px solid rgba(245, 158, 11, 0.3);
-        border-radius: 999px;
-        background: rgba(245, 158, 11, 0.1);
-      }
-
-      /* Tekst główny */
-      .policy-content p {
-        margin: 0 0 20px;
-        font-size: 17px;
+      .meta {
         color: var(--muted);
-        line-height: 1.7; /* Większy odstęp dla czytelności */
-      }
-
-      /* Nagłówki sekcji */
-      .policy-content h2 {
-        color: #fff;
-        font-size: 24px;
-        margin: 40px 0 15px;
-        padding-bottom: 10px;
+        font-size: 15px;
+        margin-bottom: 32px;
+        padding-bottom: 24px;
         border-bottom: 1px solid var(--border);
       }
-      
-      .policy-content h3 {
-        color: var(--amber);
-        font-size: 18px;
-        margin: 25px 0 10px;
+
+      h2 {
+        margin-top: 48px;
+        margin-bottom: 16px;
+        font-size: clamp(22px, 2.5vw, 28px);
+        font-weight: 700;
+        color: #fff;
       }
 
-      /* Listy */
-      .policy-content ul {
-        padding-left: 20px;
-        margin-bottom: 20px;
+      h2:first-of-type {
+        margin-top: 0;
       }
-      .policy-content li {
-        margin-bottom: 8px;
+
+      p {
+        margin: 0 0 16px;
+        font-size: 17px;
         color: var(--muted);
-      }
-      .policy-content li::marker {
-        color: var(--orange); /* Kolor kropek */
+        line-height: 1.65;
       }
 
-      /* Linki */
-      .policy-content a {
+      ul {
+        margin: 0 0 24px 24px;
+        padding: 0;
+        color: var(--muted);
+        line-height: 1.65;
+      }
+
+      li {
+        margin-bottom: 8px;
+        font-size: 17px;
+      }
+
+      a {
         color: var(--amber);
         text-decoration: none;
-        border-bottom: 1px dotted var(--amber);
-        transition: 0.2s;
-      }
-      .policy-content a:hover {
-        color: var(--orange);
-        border-bottom: 1px solid var(--orange);
+        border-bottom: 1px dashed rgba(245, 158, 11, 0.4);
+        transition: opacity 0.2s ease;
       }
 
-      /* Przycisk na dole */
-      .btn-wrapper {
-        margin-top: 40px;
-        text-align: center;
+      a:hover {
+        opacity: 0.8;
+        border-bottom-style: solid;
       }
+
+      code {
+        background: rgba(255, 255, 255, 0.08);
+        padding: 2px 6px;
+        border-radius: 6px;
+        font-family: ui-monospace, SFMono-Regular, monospace;
+        font-size: 0.95em;
+        color: #ffd38a;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      /* Stopka karty */
+      .card-footer {
+        margin-top: 60px;
+        padding-top: 24px;
+        border-top: 1px solid var(--border);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .hint {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.55);
+        max-width: 600px;
+      }
+
+      /* Przyciski */
+      .actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
       .btn {
         display: inline-block;
         text-decoration: none;
-        font-weight: 800;
-        padding: 14px 28px;
-        border-radius: 16px;
+        font-weight: 700;
+        padding: 12px 18px;
+        border-radius: 14px;
         border: 1px solid rgba(255, 255, 255, 0.16);
         color: white;
-        transition: transform 0.15s ease, box-shadow 0.15s ease;
-      }
-      .btn-primary {
-        background: linear-gradient(90deg, var(--amber), var(--orange));
-        box-shadow: 0 10px 30px rgba(245, 158, 11, 0.25);
-        border: 0;
-      }
-      .btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 15px 40px rgba(245, 158, 11, 0.35);
+        font-size: 15px;
+        transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
       }
 
-      /* Responsywność */
-      @media (max-width: 600px) {
-        .policy-card { padding: 25px; }
+      .btn-primary {
+        background: linear-gradient(90deg, var(--amber), var(--orange));
+        box-shadow: 0 10px 30px rgba(245, 158, 11, 0.22);
+        border: 0;
+      }
+
+      .btn:hover {
+        transform: translateY(-1px);
+        opacity: 0.96;
+      }
+
+      /* --- PANEL BOCZNY (ZDJĘCIE / GRAFIKA) --- */
+      .photoWrap {
+        position: sticky; /* Przykleja panel przy przewijaniu */
+        top: 40px;
+        height: min(600px, 80vh);
+        border-radius: 28px;
+        overflow: hidden;
+        border: 1px solid var(--border);
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+        background: #000;
+      }
+
+      .photoWrap img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        opacity: 0.9;
+        transition: transform 0.5s ease;
+      }
+      
+      .photoWrap:hover img {
+        transform: scale(1.03);
+      }
+
+      .photoWrap::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4));
+        pointer-events: none;
+      }
+
+      @media (max-width: 900px) {
+        .photoWrap {
+          position: static;
+          height: 300px;
+          order: -1; /* Zdjęcie nad tekstem na mobile */
+        }
+        .card {
+          padding: 28px;
+        }
+        body {
+          padding: 20px;
+        }
       }
     </style>
   </head>
 
   <body>
-    <div class="policy-wrapper">
-      <div class="policy-card">
+    <div class="wrap">
+      
+      <!-- LEWA KOLUMNA: TREŚĆ DOKUMENTU -->
+      <main class="card">
+        <span class="badge">Dokument prawny</span>
         
-        <h1 class="policy-title">Polityka Prywatności</h1>
-        <span class="policy-date">Aktualizacja: 24.05.2024</span>
-
-        <div class="policy-content">
-          <p>Witaj! Zależy nam na Twojej prywatności. Ta polityka wyjaśnia, jak zbieramy, używamy i chronimy Twoje dane na stronie <strong>domy-natura.pl</strong>.</p>
-
-          <h2>1. Kto jest administratorem danych?</h2>
-          <p>Administratorem danych jest firma <strong>[TWOJA NAZWA FIRMY]</strong>, NIP: [TWÓJ NIP].<br>
-          Kontakt: <a href="mailto:[TWÓJ@EMAIL.PL]">[TWÓJ@EMAIL.PL]</a></p>
-
-          <h2>2. Jakie dane zbieramy?</h2>
-          <p>Zbieramy tylko te dane, które są niezbędne do działania strony i kontaktu z Tobą:</p>
-          <ul>
-            <li><strong>Dane z formularza:</strong> Imię, e-mail, telefon (gdy do nas piszesz).</li>
-            <li><strong>Dane techniczne:</strong> Adres IP, typ przeglądarki (zbierane automatycznie przez serwer).</li>
-            <li><strong>Cookies:</strong> Małe pliki tekstowe, które pomagają stronie działać szybciej.</li>
-          </ul>
-
-          <h2>3. Po co nam te dane?</h2>
-          <ul>
-            <li>Żeby odpowiedzieć na Twoje zapytanie o nieruchomość.</li>
-            <li>Żeby zapewnić bezpieczeństwo strony (ochrona przed spamem).</li>
-            <li>Żeby wyświetlać Ci reklamy naszych domów w internecie (remarketing).</li>
-          </ul>
-
-          <h2>4. Komu przekazujemy dane?</h2>
-          <p>Nikomu ich nie sprzedajemy. Dostęp mają tylko:</p>
-          <ul>
-            <li>Nasz zespół.</li>
-            <li>Firma hostingowa (gdzie stoi strona).</li>
-            <li>Narzędzia analityczne (np. Google Analytics).</li>
-          </ul>
-
-          <h2>5. Twoje prawa (RODO)</h2>
-          <p>Masz prawo zażądać wglądu, poprawienia lub usunięcia swoich danych. Wyślij maila na <a href="mailto:[TWÓJ@EMAIL.PL]">[TWÓJ@EMAIL.PL]</a>, a zajmiemy się tym w 24h.</p>
+        <h1>Polityka Prywatności</h1>
+        
+        <div class="meta">
+          Obowiązuje od: <time datetime="2023-01-01">1 stycznia 2023</time>
+          <br />
+          Administrator: <strong>Domy Natura</strong>
         </div>
 
-        <div class="btn-wrapper">
-          <a href="/" class="btn btn-primary">Wróć na stronę główną</a>
-        </div>
+        <!-- === TU WKLEJ SWOJĄ TREŚĆ === -->
+        
+        <section>
+          <h2>1. Postanowienia ogólne</h2>
+          <p>
+            Niniejsza Polityka Prywatności określa zasady przetwarzania i ochrony danych osobowych 
+            przekazywanych przez Użytkowników w związku z korzystaniem ze strony internetowej 
+            <code>www.domy-natura.pl</code>.
+          </p>
+          <p>
+            Administratorem danych osobowych jest podmiot prowadzący działalność pod marką 
+            <strong>Domy Natura</strong>. Dane kontaktowe Administratora znajdują się w zakładce 
+            <a href="/#kontakt">Kontakt</a>.
+          </p>
+        </section>
 
-      </div>
+        <section>
+          <h2>2. Cele i podstawy przetwarzania</h2>
+          <p>Dane osobowe Użytkowników są przetwarzane w następujących celach:</p>
+          <ul>
+            <li>Realizacja zapytań ofertowych przesłanych przez formularz kontaktowy;</li>
+            <li>Prowadzenie korespondencji i udzielanie odpowiedzi na pytania;</li>
+            <li>Wypełnienie obowiązków prawnych ciążących na Administratorze (np. przechowywanie dokumentacji);</li>
+            <li>Analiza ruchu na stronie przy użyciu plików cookies w celu usprawnienia działania serwisu.</li>
+          </ul>
+          <p>
+            Podstawą prawną przetwarzania jest zgoda użytkownika (art. 6 ust. 1 lit. a RODO) 
+            lub konieczność realizacji umowy (art. 6 ust. 1 lit. b RODO).
+          </p>
+        </section>
+
+        <section>
+          <h2>3. Pliki Cookies</h2>
+          <p>
+            Strona wykorzystuje pliki cookies w celu zapewnienia prawidłowego działania serwisu 
+            oraz w celach statystycznych. Użytkownik może w każdym czasie zmienić ustawienia 
+            dotyczące plików cookies w swojej przeglądarce.
+          </p>
+          <p>
+            Szczegółowe informacje na temat stosowanych plików cookies znajdują się w 
+            <a href="/polityka-cookies">Polityce Cookies</a>.
+          </p>
+        </section>
+
+        <section>
+          <h2>4. Prawa Użytkownika</h2>
+          <p>Przysługuje Ci prawo do:</p>
+          <ul>
+            <li>Dostępu do treści swoich danych;</li>
+            <li>Ich sprostowania, usunięcia lub ograniczenia przetwarzania;</li>
+            <li>Wniesienia sprzeciwu wobec przetwarzania;</li>
+            <li>Przenoszenia danych;</li>
+            <li>Wniesienia skargi do organu nadzorczego (Prezes UODO).</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>5. Kontakt</h2>
+          <p>
+            W sprawach dotyczących ochrony danych osobowych prosimy o kontakt pod adresem: 
+            <a href="mailto:kontakt@domy-natura.pl">kontakt@domy-natura.pl</a>.
+          </p>
+        </section>
+
+        <!-- === KONIEC TREŚCI === -->
+
+        <footer class="card-footer">
+          <div class="hint">
+            Masz pytania dotyczące tego dokumentu? Skontaktuj się z nami bezpośrednio.
+          </div>
+          <div class="actions">
+            <a class="btn btn-primary" href="/">Wróć na stronę główną</a>
+            <a class="btn" href="/#kontakt">Napisz do nas</a>
+          </div>
+        </footer>
+      </main>
+
+      <!-- PRAWA KOLUMNA: GRAFIKA / ZDJĘCIE -->
+      <aside>
+        <div class="photoWrap">
+          <!-- Podmień ścieżkę na własne zdjęcie / grafikę pasującą do klimatu -->
+          <img src="public/images/1.png" alt="Ilustracja - Domy Natura" />
+        </div>
+      </aside>
+
     </div>
   </body>
 </html>
