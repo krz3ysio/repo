@@ -1,12 +1,234 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <!-- TUTAJ WKLEJĘ TWÓJ DOKŁADNY CSS -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Polityka prywatności</title>
+    <title>Polityka prywatności - Domy Natura</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            color: #4a5568;
+            overflow-x: hidden;
+            background: #f8fafc;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1.5" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .content {
+            background: white;
+            margin: 0 auto 80px;
+            max-width: 900px;
+            border-radius: 24px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .policy-section {
+            padding: 60px 50px;
+        }
+
+        .policy-section h2 {
+            font-size: 2.2rem;
+            color: #1f2937;
+            margin-bottom: 30px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .policy-section h3 {
+            font-size: 1.5rem;
+            color: #10b981;
+            margin: 40px 0 20px;
+            font-weight: 500;
+        }
+
+        .policy-section p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #6b7280;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+            border: 2px solid #bbf7d0;
+            border-radius: 16px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .highlight-box h4 {
+            color: #047857;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            color: #6b7280;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 16px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+            margin-top: 30px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(16, 185, 129, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 80px 0 60px;
+            }
+            
+            .policy-section {
+                padding: 40px 30px;
+            }
+            
+            .policy-section h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- IDENTYCZNA STRUKTURA jak Twoja strona -->
+    <!-- HEADER IDENTYCZNY Z DOMY-NATURA.PL -->
+    <header class="header">
+        <div class="header-content">
+            <h1><i class="fas fa-shield-alt"></i> Polityka prywatności</h1>
+            <p>Pełna przejrzystość w ochronie Twoich danych</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content">
+            <div class="policy-section">
+                <h2><i class="fas fa-info-circle"></i> 1. Informacje ogólne</h2>
+                <p><strong>Data wejścia w życie: 15.11.2024</strong></p>
+                <p>Niniejsza Polityka Prywatności określa zasady przetwarzania danych osobowych przez Domy Natura.</p>
+
+                <h2><i class="fas fa-user-tie"></i> 2. Administrator danych</h2>
+                <div class="highlight-box">
+                    <h4>Domy Natura</h4>
+                    <p><strong>Adres:</strong> [Twój adres firmy]</p>
+                    <p><strong>NIP:</strong> [Twój NIP]</p>
+                    <p><strong>E-mail:</strong> kontakt@domy-natura.pl</p>
+                </div>
+
+                <h3>3. Rodzaje zbieranych danych</h3>
+                <ul>
+                    <li>Adres IP i dane techniczne przeglądarki</li>
+                    <li>Dane z formularzy kontaktowych</li>
+                    <li>Ciasteczka niezbędne do działania strony</li>
+                </ul>
+
+                <h3>4. Cele przetwarzania</h3>
+                <ul>
+                    <li>Obsługa zapytań i formularzy kontaktowych</li>
+                    <li>Analiza ruchu na stronie (Google Analytics)</li>
+                    <li>Usprawnienie doświadczenia użytkownika</li>
+                </ul>
+
+                <h3>5. Twoje prawa</h3>
+                <ul>
+                    <li>Dostęp do swoich danych osobowych</li>
+                    <li>Sprostowanie i usunięcie danych</li>
+                    <li>Ograniczenie przetwarzania</li>
+                    <li>Przenoszenie danych do innego administratora</li>
+                    <li>Wycofanie zgody na przetwarzanie</li>
+                </ul>
+
+                <p><strong>Skontaktuj się z nami pod adresem: kontakt@domy-natura.pl</strong></p>
+
+                <a href="/" class="btn-primary">
+                    <i class="fas fa-arrow-left"></i> Powrót do strony głównej
+                </a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
