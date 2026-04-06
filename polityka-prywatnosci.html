@@ -1,43 +1,16 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Polityka Prywatności</title>
-    
-    <!-- SKOPIUJ STĄD LINKI DO CSS Z TWOJEGO index.html -->
-    <!-- np. <link rel="stylesheet" href="style.css"> -->
-</head>
-<body>
+export default function PrivacyPolicy() {
+  return (
+    <div style={{ maxWidth: "800px", margin: "0 auto", padding: "2rem" }}>
+      <h1>Polityka Prywatności</h1>
 
-    <!-- TUTAJ WARTO WKLEIĆ SWOJE MENU / NAGŁÓWEK Z index.html -->
-    
-    <div class="content">
-        <h1>Polityka Prywatności</h1>
-        <p><strong>Data ostatniej aktualizacji:</strong> [Wpisz dzisiejszą datę]</p>
+      <h2>1. Administrator danych</h2>
+      <p>Administratorem danych jest [Twoje imię / firma].</p>
 
-        <h2>1. Administrator danych</h2>
-        <p>Administratorem Twoich danych osobowych jest [Twoje Imię i Nazwisko / Nazwa firmy], z siedzibą pod adresem [Twój adres], kontaktującym się via e-mail: [Twój adres e-mail].</p>
+      <h2>2. Jakie dane zbieramy</h2>
+      <p>Zbieramy: [np. adres e-mail, cookies].</p>
 
-        <h2>2. Jakie dane zbieramy</h2>
-        <p>Zbieramy dane podane dobrowolnie przez użytkownika (np. adres e-mail wysłany przez formularz kontaktowy). Ponadto, w wyniku korzystania ze strony, mogą być automatycznie zbierane informacje takie jak adres IP, typ przeglądarki czy czas wizyty (logi serwera).</p>
-
-        <h2>3. Cel przetwarzania danych</h2>
-        <p>Dane osobowe przetwarzane są w celu:</p>
-        <ul>
-            <li>Odpowiadania na przesłane wiadomości i zapytania,</li>
-            <li>Zapewnienia prawidłowego działania strony,</li>
-            <li>Analizy ruchu na stronie (jeśli używasz Google Analytics itp.).</li>
-        </ul>
-
-        <h2>4. Pliki Cookies</h2>
-        <p>Nasza strona może używać plików cookies (ciasteczek) w celu zapewnienia najlepszej jakości korzystania z niej. Możesz w dowolnym momencie zmienić ustawienia przeglądarki tak, aby blokowała pliki cookies.</p>
-
-        <h2>5. Twoje prawa (RODO)</h2>
-        <p>Masz prawo dostępu do swoich danych, ich sprostowania, usunięcia, ograniczenia przetwarzania oraz prawo do przenoszenia danych. Aby skorzystać ze swoich praw, napisz do nas na adres: [Twój adres e-mail].</p>
+      <h2>3. Kontakt</h2>
+      <p>Email: kontakt@example.com</p>
     </div>
-
-    <!-- TUTAJ WARTO WKLEIĆ SWOJE STOPKĘ (FOOTER) Z index.html -->
-
-</body>
-</html>
+  );
+}
