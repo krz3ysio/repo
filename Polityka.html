@@ -1,112 +1,201 @@
-<main class="container page-content">
-    <article class="privacy-policy">
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Polityka Prywatności</title>
+    
+    <style>
+      :root {
+        --bg1: #0b1220;
+        --bg2: #111827;
+        --amber: #f59e0b;
+        --orange: #f97316;
+        --text: #ffffff;
+        --muted: rgba(255, 255, 255, 0.82); /* Lekko jaśniejszy dla czytelności */
+        --card: rgba(255, 255, 255, 0.06);
+        --border: rgba(255, 255, 255, 0.14);
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(1200px 600px at 20% 10%, rgba(245, 158, 11, 0.18), transparent 55%),
+          radial-gradient(1000px 600px at 80% 90%, rgba(249, 115, 22, 0.14), transparent 55%),
+          linear-gradient(135deg, var(--bg1), var(--bg2));
+        padding: 40px 20px;
+      }
+
+      /* Kontener na całą treść */
+      .policy-wrapper {
+        width: min(900px, 100%); /* Węższy niż landing page, żeby tekst się dobrze czytał */
+        margin: 0 auto;
+      }
+
+      /* Główna karta */
+      .policy-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 28px;
+        padding: 40px;
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+        backdrop-filter: blur(10px);
+      }
+
+      /* Tytuł z gradientem */
+      .policy-title {
+        font-size: clamp(36px, 5vw, 52px);
+        line-height: 1.1;
+        font-weight: 900;
+        margin: 0 0 10px;
+        background: linear-gradient(90deg, var(--amber), var(--orange));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-shadow: 0 0 30px rgba(245, 158, 11, 0.2);
+      }
+
+      .policy-date {
+        display: inline-block;
+        color: var(--amber);
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 30px;
+        padding: 6px 12px;
+        border: 1px solid rgba(245, 158, 11, 0.3);
+        border-radius: 999px;
+        background: rgba(245, 158, 11, 0.1);
+      }
+
+      /* Tekst główny */
+      .policy-content p {
+        margin: 0 0 20px;
+        font-size: 17px;
+        color: var(--muted);
+        line-height: 1.7; /* Większy odstęp dla czytelności */
+      }
+
+      /* Nagłówki sekcji */
+      .policy-content h2 {
+        color: #fff;
+        font-size: 24px;
+        margin: 40px 0 15px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--border);
+      }
+      
+      .policy-content h3 {
+        color: var(--amber);
+        font-size: 18px;
+        margin: 25px 0 10px;
+      }
+
+      /* Listy */
+      .policy-content ul {
+        padding-left: 20px;
+        margin-bottom: 20px;
+      }
+      .policy-content li {
+        margin-bottom: 8px;
+        color: var(--muted);
+      }
+      .policy-content li::marker {
+        color: var(--orange); /* Kolor kropek */
+      }
+
+      /* Linki */
+      .policy-content a {
+        color: var(--amber);
+        text-decoration: none;
+        border-bottom: 1px dotted var(--amber);
+        transition: 0.2s;
+      }
+      .policy-content a:hover {
+        color: var(--orange);
+        border-bottom: 1px solid var(--orange);
+      }
+
+      /* Przycisk na dole */
+      .btn-wrapper {
+        margin-top: 40px;
+        text-align: center;
+      }
+      .btn {
+        display: inline-block;
+        text-decoration: none;
+        font-weight: 800;
+        padding: 14px 28px;
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        color: white;
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+      }
+      .btn-primary {
+        background: linear-gradient(90deg, var(--amber), var(--orange));
+        box-shadow: 0 10px 30px rgba(245, 158, 11, 0.25);
+        border: 0;
+      }
+      .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 15px 40px rgba(245, 158, 11, 0.35);
+      }
+
+      /* Responsywność */
+      @media (max-width: 600px) {
+        .policy-card { padding: 25px; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="policy-wrapper">
+      <div class="policy-card">
         
-        <h1>Polityka Prywatności</h1>
-        <p class="last-updated">Ostatnia aktualizacja: <span id="date">2023-10-27</span></p>
+        <h1 class="policy-title">Polityka Prywatności</h1>
+        <span class="policy-date">Aktualizacja: 24.05.2024</span>
 
-        <section>
-            <h2>1. Postanowienia ogólne</h2>
-            <p>
-                Tutaj wklej treść swojego paragrafu. Tekst powinien dziedziczyć
-                style typograficzne (font, kolor, interlinię) z reszty serwisu,
-                o ile nie nadpiszesz ich osobnym CSS.
-            </p>
-        </section>
+        <div class="policy-content">
+          <p>Witaj! Zależy nam na Twojej prywatności. Ta polityka wyjaśnia, jak zbieramy, używamy i chronimy Twoje dane na stronie <strong>domy-natura.pl</strong>.</p>
 
-        <section>
-            <h2>2. Administrator danych</h2>
-            <p>
-                Administratorem Twoich danych jest [Twoja Nazwa Firmy] z siedzibą w...
-            </p>
-            <ul>
-                <li>Punkt listy numer 1</li>
-                <li>Punkt listy numer 2</li>
-                <li>Punkt listy numer 3</li>
-            </ul>
-        </section>
+          <h2>1. Kto jest administratorem danych?</h2>
+          <p>Administratorem danych jest firma <strong>[TWOJA NAZWA FIRMY]</strong>, NIP: [TWÓJ NIP].<br>
+          Kontakt: <a href="mailto:[TWÓJ@EMAIL.PL]">[TWÓJ@EMAIL.PL]</a></p>
 
-        <section>
-            <h2>3. Cele przetwarzania danych</h2>
-            <p>
-                Dane są przetwarzane w celu...
-            </p>
-        </section>
+          <h2>2. Jakie dane zbieramy?</h2>
+          <p>Zbieramy tylko te dane, które są niezbędne do działania strony i kontaktu z Tobą:</p>
+          <ul>
+            <li><strong>Dane z formularza:</strong> Imię, e-mail, telefon (gdy do nas piszesz).</li>
+            <li><strong>Dane techniczne:</strong> Adres IP, typ przeglądarki (zbierane automatycznie przez serwer).</li>
+            <li><strong>Cookies:</strong> Małe pliki tekstowe, które pomagają stronie działać szybciej.</li>
+          </ul>
 
-        <!-- Dodaj kolejne sekcje zgodnie z wymogami prawnymi -->
+          <h2>3. Po co nam te dane?</h2>
+          <ul>
+            <li>Żeby odpowiedzieć na Twoje zapytanie o nieruchomość.</li>
+            <li>Żeby zapewnić bezpieczeństwo strony (ochrona przed spamem).</li>
+            <li>Żeby wyświetlać Ci reklamy naszych domów w internecie (remarketing).</li>
+          </ul>
 
-    </article>
-</main># Polityka Prywatności
+          <h2>4. Komu przekazujemy dane?</h2>
+          <p>Nikomu ich nie sprzedajemy. Dostęp mają tylko:</p>
+          <ul>
+            <li>Nasz zespół.</li>
+            <li>Firma hostingowa (gdzie stoi strona).</li>
+            <li>Narzędzia analityczne (np. Google Analytics).</li>
+          </ul>
 
-**Ostatnia aktualizacja:** 11 kwietnia 2025
+          <h2>5. Twoje prawa (RODO)</h2>
+          <p>Masz prawo zażądać wglądu, poprawienia lub usunięcia swoich danych. Wyślij maila na <a href="mailto:[TWÓJ@EMAIL.PL]">[TWÓJ@EMAIL.PL]</a>, a zajmiemy się tym w 24h.</p>
+        </div>
 
-Dziękujemy, że odwiedziłeś naszą stronę. W **Domy Natura** szanujemy Twoją prywatność tak samo, jak dbamy o naturę i jakość tego, co tworzymy.
+        <div class="btn-wrapper">
+          <a href="/" class="btn btn-primary">Wróć na stronę główną</a>
+        </div>
 
-Poniżej wyjaśniamy w prosty i przejrzysty sposób, jak zbieramy, wykorzystujemy i chronimy Twoje dane osobowe.
-
-### 1. Administrator danych
-Administratorem Twoich danych osobowych jest:
-
-**Domy Natura Sp. z o.o.**  
-ul. [Wpisz adres]  
-NIP: [Wpisz NIP]  
-REGON: [Wpisz REGON]
-
-Kontakt w sprawie ochrony danych:  
-**E-mail:** [wpisz adres e-mail, np. biuro@domy-natura.pl]
-
-### 2. Jakie dane zbieramy?
-
-Zbieramy tylko te dane, które są naprawdę potrzebne:
-
-- Imię i nazwisko
-- Adres e-mail
-- Numer telefonu
-- Adres zamieszkania / budowy (jeśli podajesz)
-- Informacje, które dobrowolnie podajesz w wiadomościach lub formularzach
-- Dane cookies i podobne technologie (więcej poniżej)
-
-### 3. W jakim celu wykorzystujemy Twoje dane?
-
-- Odpowiadanie na Twoje wiadomości i zapytania ofertowe
-- Kontakt w sprawie realizacji usług i budowy domu
-- Wysyłanie informacji o ofercie i materiałach edukacyjnych (tylko jeśli wyraziłeś zgodę)
-- Poprawa działania strony i analiza ruchu (anonimowo)
-- Spełnianie obowiązków prawnych
-
-### 4. Cookies i technologie śledzące
-
-Nasza strona używa plików cookies, dzięki którym działa płynnie i jest dostosowana do Ciebie. Nie wykorzystujemy ich do agresywnego śledzenia.
-
-Możesz w każdej chwili zmienić ustawienia cookies w swojej przeglądarce lub za pomocą banera, który pojawia się przy pierwszej wizycie.
-
-### 5. Komu przekazujemy Twoje dane?
-
-Twoje dane mogą być przekazywane tylko zaufanym partnerom, takim jak:
-- Firma księgowa
-- Dostawcy narzędzi do kontaktu (np. e-mail)
-- Firma hostingowa
-
-Nigdy nie sprzedajemy Twoich danych i nie udostępniamy ich firmom marketingowym.
-
-### 6. Twoje prawa
-
-Masz pełne prawo do:
-- Dostępu do swoich danych
-- Ich sprostowania
-- Usunięcia
-- Ograniczenia przetwarzania
-- Sprzeciwu
-- Przenoszenia danych
-
-Aby skorzystać z tych praw – po prostu napisz do nas na adres podany powyżej.
-
-### 7. Jak długo przechowujemy dane?
-
-Przechowujemy dane tak długo, jak jest to konieczne do realizacji celu, dla którego je zebraliśmy, lub tak długo, jak wymagają tego przepisy prawa.
-
----
-
-Jeśli masz jakiekolwiek pytania lub wątpliwości – śmiało pisz. Odpowiadamy szybko i po ludzku.
-
-Z poważaniem,  
-Zespół **Domy Natura**
+      </div>
+    </div>
+  </body>
+</html>
