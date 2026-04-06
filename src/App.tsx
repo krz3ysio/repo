@@ -772,7 +772,6 @@ Nasze nieruchomości stanowią idealną propozycję zarówno dla rodzin z pociec
             <p>© 2026 Domy 2-Lokalowe. Wszystkie prawa zastrzeżone.</p>
             <div className="flex gap-6 text-sm">
               <a href="#" className="hover:text-amber-500 transition-colors">Polityka prywatności</a>
-              <a href="#" className="hover:text-amber-500 transition-colors">Regulamin</a>
             </div>
           </div>
         </div>
